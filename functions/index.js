@@ -4,7 +4,7 @@ const { getDatabase } = require('firebase-admin/database');
 const { defineSecret } = require('firebase-functions/params');
 const { onRequest } = require('firebase-functions/v2/https');
 
-initializeApp();
+initializeApp({ databaseURL: 'https://sayora-7ab4d-default-rtdb.firebaseio.com' });
 const db = getDatabase();
 const adminPassword = defineSecret('ADMIN_PASSWORD');
 const ALLOWED_ITEMS = new Set([
